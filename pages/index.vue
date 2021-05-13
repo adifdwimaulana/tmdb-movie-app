@@ -59,7 +59,7 @@
         <div class="grid-rows-1 mt-4">
           <div class="grid grid-cols-3 gap-4">
             <Movie v-for="movie in state.movies" v-bind:key="movie.id"
-              :title="movie.title" :overview="movie.overview" :genre="movie.genre_ids"
+              :title="movie.title" :overview="movie.overview" :genre="movie.genre_ids" :rating="movie.vote_average"
               :releaseDate="movie.release_date" :id="movie.id" :imageUrl="movie.poster_path"
             />
           </div>

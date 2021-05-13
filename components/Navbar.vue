@@ -5,7 +5,7 @@
                 <nuxt-link to="/">
                     <Logo />
                 </nuxt-link>
-                <nuxt-link to="/logout" class="text-white text-lg ml-auto">Logout</nuxt-link>
+                <nuxt-link to="/logout" class="text-white text-xl ml-auto">Logout</nuxt-link>
             </div>
         </div>
     </nav>

@@ -24,7 +24,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/composition-api'
+    '@/plugins/composition-api',
+    { src: '~/plugins/date-picker', ssr: false },
+    { src: '~/plugins/vue-datepicker', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

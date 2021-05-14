@@ -15,6 +15,7 @@
     "@nuxtjs/composition-api": "^0.23.4",
     "@vue/composition-api": "^1.0.0-rc.8",
     "axios": "^0.21.1",
+    "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.9.1",
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",

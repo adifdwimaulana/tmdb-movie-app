@@ -193,6 +193,7 @@ export default {
       applyFilter,
       resetFilter
     }
-  }
+  },
+  middleware: 'auth'
 }
 </script>

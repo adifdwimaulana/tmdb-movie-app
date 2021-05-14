@@ -15,6 +15,12 @@
   </svg>
 </template>
 
+<script lang="ts">
+  export default {
+    name: 'Logo'
+  }
+</script>
+
 <style>
 .NuxtLogo {
   animation: 1s appear;

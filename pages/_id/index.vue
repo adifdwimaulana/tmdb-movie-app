@@ -84,12 +84,6 @@ import { Route } from "vue-router"
 import axios from 'axios'
 
 export default {
-    
-    head() {
-        return {
-
-        }
-    },
     setup() {
         const state = reactive({
             title: '',
@@ -127,6 +121,7 @@ export default {
         return {
             state
         }
-    }
+    },
+    middleware: 'auth'
 }
 </script>

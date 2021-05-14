@@ -55,7 +55,9 @@
       </div>
       <div class="col-span-2">
         <h4 class="text-2xl font-bold">Hot Movies</h4>
-
+        <div class="relative mr-6 my-2">
+          <input type="search" class="bg-purple-white shadow rounded border-0 p-3" style="width: 100%; focus: none" placeholder="Search by title..." v-model="state.query">
+        </div>
         <div class="grid-rows-1 mt-4">
           <div class="grid grid-cols-3 gap-4">
             <Movie v-for="movie in state.movies" v-bind:key="movie.id"
@@ -113,7 +115,8 @@ export default {
       selectedGenre: 0,
       startTime: new Date(),
       endTime: new Date(),
-      selectedRate: 50
+      selectedRate: 50,
+      query: ''
     })
 
     onMounted(async (): Promise<any> => {
@@ -167,6 +170,20 @@ export default {
 
     watch(() => state.movies, (newValue, oldValue) => {
       console.log(state.movies)
+    })
+
+    watch(() => state.query, async (newValue, oldValue) => {
+      if(state.query == ""){
+        const responseMovies: any = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=9adbf9b696ac935f8dedfac5c6e8948b&language=en-US&page=${state.page}`)
+        const resultMovies: any = await responseMovies.data.results
+
+        state.movies = resultMovies
+      } else {
+        const responseMovies: any = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=9adbf9b696ac935f8dedfac5c6e8948b&language=en-US&query=${state.query}&page=1&include_adult=false`)
+        const resultMovies: any = await responseMovies.data.results
+
+        state.movies = resultMovies
+      }
     })
 
     return {

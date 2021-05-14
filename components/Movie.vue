@@ -24,12 +24,12 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'Movie',
     props: ['id', 'title', 'genre', 'releaseDate', 'imageUrl', 'overview', 'rating'],
     setup(){
-        function redirect(id){
+        function redirect(id: number){
             console.log(id)
         }
 
